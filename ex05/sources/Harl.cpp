@@ -33,7 +33,13 @@ void	Harl::complain( std::string level ) {
 	std::string level_names[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	int			level_num;
 
-	for (level_num = 0; level_names[level_num].compare(level); level_num++) {}
+	for ( level_num = 0;
+		level_names[level_num].compare(level) != 0 && level_num < 4;
+		level_num++ ) {}
 
+	if ( level_num > 3 ) {
+		std::cout << "Harl doesn't know that level" <<std::endl;
+		return ;
+	}
 	(this->*levels[level_num])();
 }
