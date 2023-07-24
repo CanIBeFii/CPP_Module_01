@@ -1,4 +1,4 @@
-NAME = ex06
+NAME = harlFilter
 
 HEADERS_LIST = Harl.hpp
 HEADERS_DIRECTORY = ./includes/
