@@ -14,6 +14,7 @@ class Harl {
 		void	info( void );
 		void	warning( void );
 		void	error( void );
+		void	invalidComplain( void );
 };
 
 typedef	void (Harl::*t_func) ( void );

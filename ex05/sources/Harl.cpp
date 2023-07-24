@@ -28,18 +28,18 @@ void	Harl::error( void ) {
 	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
+void	Harl::invalidComplain( void ) {
+	std::cout << "There's not a level with this name!" << std::endl;
+}
+
 void	Harl::complain( std::string level ) {
-	t_func		levels[] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	t_func		levels[] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error, &Harl::invalidComplain};
 	std::string level_names[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	int			level_num;
 
 	for ( level_num = 0;
-		level_names[level_num].compare(level) != 0 && level_num < 4;
+		level_num < 4 && level_names[level_num].compare(level) != 0;
 		level_num++ ) {}
 
-	if ( level_num > 3 ) {
-		std::cout << "Harl doesn't know that level" <<std::endl;
-		return ;
-	}
 	(this->*levels[level_num])();
 }
