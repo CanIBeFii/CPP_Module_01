@@ -7,7 +7,8 @@ int	main( void ) {
 	horde = zombieHorde( 5, "RandomLarry" );
 
 	std::cout << "\nAll the RandomLarries will announce themself" << std::endl;
-	for (int index = 0; index < 5; index += 1) {
+	
+	for ( int index = 0 ; index < 5 ; index += 1 ) {
 		horde[index].announce();
 	}
 

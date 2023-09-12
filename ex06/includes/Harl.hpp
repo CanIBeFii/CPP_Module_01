@@ -17,4 +17,4 @@ class Harl {
 		void	invalidComplain( void );
 };
 
-#endif 
+#endif

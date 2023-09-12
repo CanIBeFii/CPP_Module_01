@@ -19,4 +19,4 @@ class Harl {
 
 typedef	void (Harl::*t_func) ( void );
 
-#endif 
+#endif

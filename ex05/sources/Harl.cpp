@@ -33,8 +33,8 @@ void	Harl::invalidComplain( void ) {
 }
 
 void	Harl::complain( std::string level ) {
-	t_func		levels[] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error, &Harl::invalidComplain};
-	std::string level_names[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	t_func		levels[] = { &Harl::debug, &Harl::info, &Harl::warning, &Harl::error, &Harl::invalidComplain };
+	std::string level_names[] = { "DEBUG", "INFO", "WARNING", "ERROR" };
 	int			level_num;
 
 	for ( level_num = 0;

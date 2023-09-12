@@ -3,32 +3,35 @@
 int main( int argc, char* argv[] )
 {
 	if ( argc != 4 ) {
-		ERROR(USAGE);
+		std::cout << USAGE << std::endl;
 		return ( 1 );
 	}
+
 	std::string	s1 = argv[2];
 	std::string	s2 = argv[3];
 	if ( s1.empty() || s2.empty() || s1.compare(s2) == 0 ) {
-		ERROR(STRINGS);
+		std::cout << STRINGS << std::endl;
 		return ( 2 );
 	}
+
 	std::string		filename = argv[1];
 	std::ifstream	infile(filename.c_str(), std::ifstream::in);
 	if ( infile.is_open() == false) {
-		ERROR(INFILE);
+		std::cout << INFILE << std::endl;
 		return ( 3 ); 
 	}
+
 	std::ofstream	outfile(filename.append(".replace").c_str(), std::ofstream::out);
 	if ( outfile.is_open() == false) {
-		ERROR(OUTFILE);
+		std::cout << OUTFILE << std::endl;
 		return ( 4 );
 	}
 
 	std::string	line;
-	while ( getline(infile, line) )
+	while ( getline( infile, line ) )
 	{
 		size_t	pos = 0;
-		while (true) {
+		while ( true ) {
 			size_t	index;
 			index = line.find(s1, pos);
 			if ( index == std::string::npos ) {
@@ -39,6 +42,7 @@ int main( int argc, char* argv[] )
 		}
 		outfile << &line[pos] << std::endl;
 	}
+
 	infile.close();
 	outfile.close();
 	return ( 0 );
