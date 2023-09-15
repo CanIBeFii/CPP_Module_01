@@ -17,8 +17,8 @@ class HumanB {
 		std::string getName( void );
 
 	private:
-		Weapon		*_weapon;
 		std::string	_name;
+		Weapon		*_weapon;
 };
 
 #endif
